@@ -70,8 +70,22 @@ static NSString * __MMStringFromElementType(MMElementType type)
             return @"entity";
         case MMElementTypeDefinition:
             return @"definition";
-        default:
-            return @"unknown";
+        case MMElementTypeTable:
+            return @"table";
+        case MMElementTypeTableRow:
+            return @"table-row";
+        case MMElementTypeTableHeader:
+            return @"table-header";
+        case MMElementTypeTableRowCell:
+            return @"table-row-cell";
+        case MMElementTypeTableHeaderCell:
+            return @"table-header-cell";
+        case MMElementTypeUsername:
+            return @"username";
+        case MMElementTypeCheckbox:
+            return @"checkbox";
+        case MMElementTypeShorthandIssues:
+            return @"shorthand";
     }
 }
 

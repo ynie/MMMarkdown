@@ -45,7 +45,7 @@ static NSString *__delimitersForCharacter(unichar character)
         default:
             [NSException raise:@"Invalid delimiter character"
                         format:@"Character '%C' is not a valid delimiter", character];
-            return nil;
+            return '\0';
     }
 }
 
@@ -322,10 +322,6 @@ static NSString *__delimitersForCharacter(unichar character)
 - (NSUInteger)skipNestedBracketsWithDelimiter:(unichar)delimiter
 {
     NSString *delimiters     = __delimitersForCharacter(delimiter);
-
-    if (delimiters == nil)
-        return 0;
-
     unichar   openDelimiter  = [delimiters characterAtIndex:0];
     unichar   closeDelimeter = [delimiters characterAtIndex:1];
     
